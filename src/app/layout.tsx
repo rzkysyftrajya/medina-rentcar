@@ -1,19 +1,25 @@
 // src/app/layout.tsx
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BottomNav } from "@/components/bottom-nav";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
-import {
-  ImageLightbox,
-  ImageLightboxProvider,
-} from "@/components/image-lightbox";
-import Script from "next/script"; // <-- Import the Script component
+import Script from "next/script";
+
+// Lazy-load komponen berat
+const ImageLightboxProvider = dynamic(
+  () => import("@/components/image-lightbox").then(m => m.ImageLightboxProvider),
+  { ssr: false }
+);
+const ImageLightbox = dynamic(
+  () => import("@/components/image-lightbox").then(m => m.ImageLightbox),
+  { ssr: false }
+);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -101,6 +107,12 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning className={inter.variable}>
       <head>
+        {/* Preload Font */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+          as="style"
+        />
         {/* Structured Data JSON-LD */}
         <script
           type="application/ld+json"
@@ -108,7 +120,6 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        {/* Favicon is better handled via metadata */}
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
@@ -128,17 +139,16 @@ export default function RootLayout({
           </ImageLightboxProvider>
         </ThemeProvider>
         <Analytics />
-        {/* Use the next/script component for your Google Tag Manager scripts */}
+        {/* Analytics & Tag Manager - non blocking */}
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17462980673"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'AW-17462980673');
           `}
         </Script>
