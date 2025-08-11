@@ -172,7 +172,7 @@ export const carData = [
     transmission: "Matic",
     capacity: 7,
     prices: {
-      matic: "Rp 800.000",
+      driver: "Hubungi Kami",
     },
     description:
       "SUV premium dengan performa tangguh dan tampilan maskulin, cocok untuk perjalanan bisnis maupun liburan.",
@@ -199,7 +199,7 @@ export const carData = [
     transmission: "Matic",
     capacity: 7,
     prices: {
-      matic: "Rp 750.000",
+      driver: "Hubungi Kami",
     },
     description:
       "SUV tangguh yang siap untuk petualangan Anda di segala medan, baik dalam kota maupun off-road ringan.",
@@ -226,7 +226,7 @@ export const carData = [
     transmission: "Matic",
     capacity: 7,
     prices: {
-      matic: "Rp 700.000",
+      driver: "Hubungi Kami",
     },
     description:
       "Crossover mewah dengan pilihan mesin hybrid yang efisien. Tingkat kenyamanan baru untuk keluarga modern.",
@@ -420,8 +420,8 @@ export const carData = [
     transmission: "Manual & Matic",
     capacity: 7,
     prices: {
-      manual: "Rp 350.000",
-      matic: "Rp 400.000",
+      manual: "Rp 400.000",
+      matic: "Rp 450.000",
     },
     description:
       "Generasi terbaru Avanza dengan penggerak roda depan, lebih nyaman dan modern.",
@@ -448,8 +448,8 @@ export const carData = [
     transmission: "Manual & Matic",
     capacity: 7,
     prices: {
-      manual: "Rp 350.000",
-      matic: "Rp 400.000",
+      manual: "Rp 400.000",
+      matic: "Rp 450.000",
     },
     description:
       "Pilihan ekonomis dan handal untuk keluarga maupun perjalanan grup dengan kapasitas 7 penumpang.",
@@ -504,8 +504,8 @@ export const carData = [
     transmission: "Manual & Matic",
     capacity: 7,
     prices: {
-      manual: "Rp 350.000",
-      matic: "Rp 400.000",
+      manual: "Rp 400.000",
+      matic: "Rp 450.000",
     },
     description:
       "Kabin yang luas dengan kenyamanan ekstra untuk penumpang, ideal untuk perjalanan jauh.",
@@ -615,6 +615,7 @@ export const carData = [
     transmission: "Matic",
     capacity: 5,
     prices: {
+      manual: "Rp 300.000",
       matic: "Rp 350.000",
     },
     description:
@@ -642,7 +643,8 @@ export const carData = [
     transmission: "Matic",
     capacity: 5,
     prices: {
-      matic: "Rp 325.000",
+      manual: "Rp 300.000",
+      matic: "Rp 350.000",
     },
     description:
       "City car handal dengan sentuhan sporty, lincah untuk menembus padatnya lalu lintas kota.",
@@ -669,7 +671,8 @@ export const carData = [
     transmission: "Matic",
     capacity: 5,
     prices: {
-      matic: "Rp 325.000",
+      manual: "Rp 300.000",
+      matic: "Rp 350.000",
     },
     description:
       "Pilihan paling ekonomis untuk mobil kota yang lincah dan sangat irit bahan bakar.",
