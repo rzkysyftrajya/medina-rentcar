@@ -1,25 +1,23 @@
-'use client';
-import { HeroSection } from '@/app/hero-section';
-import { FeaturedFleet } from '@/components/featured-fleet';
-import { WhyUs } from '@/components/why-us';
-import { ServiceHighlights } from '@/components/service-highlights';
-import { Testimonials } from '@/components/testimonials';
-import { CTASection } from '@/components/cta-section';
-import Script from 'next/script';
-import { FaqHighlights } from '@/components/faq-highlights';
-
+"use client";
+import { HeroSection } from "@/app/hero-section";
+import { FeaturedFleet } from "@/components/featured-fleet";
+import { WhyUs } from "@/components/why-us";
+import { ServiceHighlights } from "@/components/service-highlights";
+import { Testimonials } from "@/components/testimonials";
+import { CTASection } from "@/components/cta-section";
+import Script from "next/script";
+import { FaqHighlights } from "@/components/faq-highlights";
 
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https://Medinasewamobilmedankulanamu.com/",
-  "potentialAction": {
+  url: "https://www.medinarentcarmedan.com/",
+  potentialAction: {
     "@type": "SearchAction",
-    "target": "https://Medinasewamobilmedankulanamu.com/armada?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+    target: "https://www.medinarentcarmedan.com/armada?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 };
-
 
 export default function Home() {
   return (

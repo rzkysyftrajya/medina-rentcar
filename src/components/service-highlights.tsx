@@ -28,7 +28,7 @@ export function ServiceHighlights() {
             <Image
               src={serviceImage}
               data-ai-hint="man giving car keys"
-              alt="Layanan Medina Rentcar"
+              alt="Layanan medina rentcar"
               width={600}
               height={400}
               className="rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"

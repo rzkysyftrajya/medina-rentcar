@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { TrueFocus } from '@/components/true-focus';
+import { TrueFocus } from "@/components/true-focus";
 
 export function HeroTitle() {
   return (
@@ -13,10 +13,18 @@ export function HeroTitle() {
         animationDuration={0.8}
         pauseBetweenAnimations={0.5}
       >
-        <span className="text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">MEDINA</span>
-        <span className="text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">RENT</span>
-        <span className="text-primary text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">CAR</span>
-        <span className="text-primary text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">MEDAN</span>
+        <span className="text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">
+          MEDINA
+        </span>
+        <span className="text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">
+          RENT
+        </span>
+        <span className="text-primary text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">
+          CAR
+        </span>
+        <span className="text-primary text-[2.5rem] md:text-[8rem] lg:text-[10rem] font-black uppercase">
+          MEDAN
+        </span>
       </TrueFocus>
     </div>
   );
