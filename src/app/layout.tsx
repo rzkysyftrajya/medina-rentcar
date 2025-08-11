@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BottomNav } from "@/components/bottom-nav";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import {
   ImageLightbox,
