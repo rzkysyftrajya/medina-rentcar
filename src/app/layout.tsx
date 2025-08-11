@@ -2,24 +2,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BottomNav } from "@/components/bottom-nav";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
+import {
+  ImageLightbox,
+  ImageLightboxProvider,
+} from "@/components/image-lightbox";
 import Script from "next/script";
-
-// Lazy-load komponen berat
-const ImageLightboxProvider = dynamic(
-  () => import("@/components/image-lightbox").then(m => m.ImageLightboxProvider),
-  { ssr: false }
-);
-const ImageLightbox = dynamic(
-  () => import("@/components/image-lightbox").then(m => m.ImageLightbox),
-  { ssr: false }
-);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -101,18 +94,12 @@ const organizationSchema = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="id" suppressHydrationWarning className={inter.variable}>
       <head>
-        {/* Preload Font */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-          as="style"
-        />
         {/* Structured Data JSON-LD */}
         <script
           type="application/ld+json"
@@ -138,13 +125,15 @@ export default function RootLayout({
             <ImageLightbox />
           </ImageLightboxProvider>
         </ThemeProvider>
+
         <Analytics />
-        {/* Analytics & Tag Manager - non blocking */}
+
+        {/* Google Analytics */}
         <Script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17462980673"
-          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
