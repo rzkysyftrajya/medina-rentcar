@@ -95,62 +95,6 @@ const organizationSchema = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="id" suppressHydrationWarning className={inter.variable}>
-      <head>
-        {/* Structured Data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        {/* Favicon is better handled via metadata */}
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className="font-body antialiased bg-background text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ImageLightboxProvider>
-            <Header />
-            <main className="flex-1 pb-24 md:pb-0">{children}</main>
-            <Footer />
-            <BottomNav />
-            <Toaster />
-            <ImageLightbox />
-          </ImageLightboxProvider>
-        </ThemeProvider>
-        <Analytics />
-        {/* Use the next/script component for your Google Tag Manager scripts */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17462980673"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-17462980673');
-          `}
-        </Script>
-      </body>
-    </html>
-  );
-}  sameAs: [siteConfig.social.instagram, siteConfig.social.tiktok],
-  openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-};
-
-export default function RootLayout({
-  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -188,14 +132,14 @@ export default function RootLayout({
         {/* Google Analytics */}
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17462980673"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17357105664"
         />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17462980673');
+            gtag('config', 'AW-17357105664');
           `}
         </Script>
       </body>
