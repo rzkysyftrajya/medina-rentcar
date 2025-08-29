@@ -129,6 +129,117 @@ export default function RootLayout({
 
         <Analytics />
 
+        {/* Google Ads */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17462980673"
+        />
+        <Script id="google-ads">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17462980673');
+          `}
+        </Script>
+      </body>
+    </html>
+  );
+}  },
+  contact: {
+    phone: "+6282277757234",
+    email: "medinarentcarmedan@gmail.com",
+  },
+  social: {
+    instagram: "https://www.instagram.com/medinarentcarmedan",
+    tiktok:
+      "https://www.tiktok.com/@ptvickyrentalnusantara?_t=ZS-8ymknhj3WWw&_r=1",
+  },
+};
+
+export const metadata: Metadata = {
+  title: "Sewa Mobil Medan - Rental Murah & Profesional | Medina Rentcar",
+  description: siteConfig.description,
+  keywords: [
+    "Sewa mobil Medan",
+    "Rental mobil Medan",
+    "Sewa mobil lepas kunci Medan",
+    "Sewa mobil bandara Kualanamu",
+    "Sewa mobil Medan murah",
+    "Sewa mobil 24 jam Medan",
+    "Sewa mobil Innova Medan",
+    "Sewa mobil Alphard Medan",
+    "Sewa mobil Hiace Medan",
+    "Sewa mobil Fortuner Medan",
+    "Sewa mobil Pajero Medan",
+    "Sewa mobil pengantin Medan",
+    "Sewa mobil harian mingguan bulanan Medan",
+    "Harga sewa mobil Medan",
+    "Sewa mobil Medan ke Danau Toba",
+    "Sewa mobil dengan sopir Medan",
+    "Sewa mobil luar kota Medan",
+    "Sewa mobil dalam kota Medan",
+  ],
+  viewport: "width=device-width, initial-scale=1",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  logo: siteConfig.logo,
+  telephone: siteConfig.contact.phone,
+  email: siteConfig.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.province,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: siteConfig.address.country,
+  },
+  sameAs: [siteConfig.social.instagram, siteConfig.social.tiktok],
+  openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="id" suppressHydrationWarning className={inter.variable}>
+      <head>
+        {/* Structured Data JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className="font-body antialiased bg-background text-foreground">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ImageLightboxProvider>
+            <Header />
+            <main className="flex-1 pb-24 md:pb-0">{children}</main>
+            <Footer />
+            <BottomNav />
+            <Toaster />
+            <ImageLightbox />
+          </ImageLightboxProvider>
+        </ThemeProvider>
+
+        <Analytics />
+
         {/* Google Analytics */}
         <Script
           async
