@@ -63,24 +63,6 @@ export function WhatsAppModal({
           <p className="text-sm text-muted-foreground">
             Anda akan dialihkan ke WhatsApp untuk menghubungi Medina Rentcar.
           </p>
-
-          <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-3">
-            <p className="text-xs text-amber-800 dark:text-amber-200 font-medium">
-              ⚠️ PERHATIAN PENTING: Website ini khusus untuk layanan rental
-              mobil Medan. TIDAK ada layanan judi, slot, casino, betting, atau
-              game apapun.
-            </p>
-            <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">
-              Jika Anda mencari layanan judi/slot, ini bukan tempat yang tepat.
-            </p>
-          </div>
-
-          <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
-            <p className="text-xs text-blue-800 dark:text-blue-200">
-              ✅ Hanya melayani: Sewa mobil, rental mobil, armada kendaraan
-              profesional
-            </p>
-          </div>
         </div>
 
         {/* Footer */}

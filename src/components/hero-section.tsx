@@ -5,11 +5,9 @@ import Link from "next/link";
 import { HeroTitle } from "./hero-title";
 import Image from "next/image";
 import StarBorder from "./star-border";
-import { useState } from "react";
-import { WhatsAppModal } from "./whatsapp-modal";
+import { openWhatsApp } from "@/lib/utils";
 
 export function HeroSection() {
-  const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
   const whatsappMessage =
     "Halo Medina Rentcar, saya tertarik untuk menyewa mobil.";
 
@@ -50,20 +48,13 @@ export function HeroSection() {
               asChild
               className="text-lg font-bold px-10 py-7 rounded-full bg-primary/90 hover:bg-primary/80 transition-all transform hover:scale-105 shadow-2xl shadow-primary/40 ring-4 ring-primary/20 hover:ring-primary/40 w-full"
             >
-              <button onClick={() => setIsWhatsAppModalOpen(true)}>
+              <button onClick={() => openWhatsApp(whatsappMessage)}>
                 Booking via WA
               </button>
             </Button>
           </StarBorder>
         </div>
       </div>
-
-      <WhatsAppModal
-        isOpen={isWhatsAppModalOpen}
-        onClose={() => setIsWhatsAppModalOpen(false)}
-        message={whatsappMessage}
-        phoneNumber="6282277757234"
-      />
     </section>
   );
 }
