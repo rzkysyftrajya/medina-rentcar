@@ -1,0 +1,44 @@
+.star-border-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 9999px; /* rounded-full */
+}
+
+.inner-content {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.border-gradient-top,
+.border-gradient-bottom {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: var(--thickness, 1px);
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, var(--star-color), transparent 25%);
+  animation: move var(--animation-speed, 6s) linear infinite;
+}
+
+.border-gradient-top {
+  top: 0;
+}
+
+.border-gradient-bottom {
+  bottom: 0;
+  animation-direction: reverse;
+}
+
+
+@keyframes move {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
